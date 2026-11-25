@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transpolo | Central de Operações</title>
+<style>
+:root{color-scheme:light;--navy:#132b3a;--teal:#107c78;--ink:#1c3545;--muted:#536974;--line:#dce5e6;--bg:#f4f7f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:3px}button,input,select{font:inherit}button,a,input,select{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #126c9a}header{background:var(--navy);color:white;padding:23px 6%;display:flex;align-items:center;justify-content:space-between;gap:16px}header strong{font-size:24px;letter-spacing:.12em}header small{display:block;color:#bad5dc;letter-spacing:.06em}header span{font-size:12px;color:#fff;border:1px solid #9bb5be;border-radius:20px;padding:6px 11px}.shell{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 92px)}nav{background:#1c3b4b;padding:28px 16px}nav a{display:block;color:#e3f0f2;padding:12px 14px;text-decoration:none;border-radius:7px}nav a:hover{background:#2c5260}nav a:focus-visible{outline-color:white}.catalog-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.catalog-grid a{display:block;color:var(--ink);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:13px;overflow-wrap:anywhere}.catalog-grid a:hover{border-color:var(--teal)}.catalog-grid small{display:block;color:var(--muted);margin-top:5px}.catalog-grid em{display:block;color:var(--teal);font-size:12px;font-style:normal;font-weight:600;margin-top:8px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:8px;z-index:100;background:white;color:var(--ink);padding:8px}.catalog-count{font-size:13px;color:var(--muted)}@media(max-width:460px){.catalog-tools{grid-template-columns:1fr}}main{max-width:1180px;width:100%;padding:32px clamp(18px,4vw,56px);margin:auto}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.035em;margin-bottom:10px}h2{font-size:20px;letter-spacing:-.02em}h3{font-size:16px}.eyebrow{font-size:12px;letter-spacing:.1em;color:var(--muted);font-weight:700;text-transform:uppercase}.muted{color:var(--muted)}.notice{border:1px solid #ddc28a;background:#fff7e5;padding:12px 16px;border-radius:8px;color:#614916;margin:20px 0}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.panel,.metric{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 2px 4px #193b4510}.metric strong{font-size:23px;display:block;color:var(--teal)}.layout{display:grid;grid-template-columns:1.3fr .9fr;gap:18px}.panel{margin-bottom:18px;min-width:0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{font-size:13px;font-weight:650;display:block}select,input{display:block;width:100%;min-width:0;padding:11px;border:1px solid #a9b9c0;border-radius:7px;background:#fff;color:var(--ink);margin-top:5px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}button{cursor:pointer;border:0;background:var(--teal);color:white;padding:11px 16px;border-radius:7px;font-weight:650}.secondary{background:#edf4f4;color:var(--ink);border:1px solid var(--line)}.result{margin-top:18px;padding:16px;background:#edf5f4;border-left:4px solid var(--teal);border-radius:5px;min-height:70px}.result strong{display:block;font-size:22px}.result.blocked{background:#fff4e7;border-color:#ae7324}.resources{display:grid;gap:10px}.resources a{display:block;border:1px solid var(--line);padding:13px;border-radius:8px;text-decoration:none}.resources a span{display:block;color:var(--muted);font-size:13px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}th,td{padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f3f6f6}footer{color:var(--muted);font-size:12px;margin-top:12px}@media(max-width:840px){.shell{display:block}nav{display:flex;gap:6px;overflow:auto;padding:8px}nav a{white-space:nowrap;padding:8px 12px}.layout{grid-template-columns:1fr}main{padding:24px 16px}.metrics{grid-template-columns:repeat(3,1fr)}.metric{padding:12px}.metric strong{font-size:17px}}@media(max-width:460px){header{padding:16px}header strong{font-size:19px}.fields{grid-template-columns:1fr}.metrics{grid-template-columns:1fr;gap:8px}.metric{padding:10px 14px}.panel{padding:16px}}
+.preview-media{display:grid;place-items:center;min-height:160px;aspect-ratio:4/3;background:#edf2f3;border-radius:7px;overflow:hidden;margin-bottom:10px;position:relative}.preview-media img[hidden],.preview-empty[hidden]{display:none}.preview-media img{width:100%;height:100%;object-fit:contain;display:block;position:absolute;inset:0}.preview-empty{font-size:12px;text-align:center;color:var(--muted);padding:15px;max-width:150px}.catalog-card{background:white;border:1px solid var(--line);border-radius:9px;padding:12px;min-width:0;overflow-wrap:anywhere}.catalog-grid .catalog-card>a{border:0;padding:0;margin-top:9px;color:var(--teal);font-size:13px;font-weight:650}.catalog-grid .catalog-card>a:hover{text-decoration:underline}.preview-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}.preview-actions input{max-width:100%;width:auto}.preview-count{font-size:12px;color:var(--muted);margin-bottom:0}.preview-meta{font-size:11px;color:var(--muted);margin-top:6px}.catalog-card button{font-size:12px;padding:7px 10px;margin-top:8px}.preview-dialog{max-width:min(92vw,820px);border:1px solid var(--line);border-radius:12px;padding:15px;background:white;color:var(--ink)}.preview-dialog::backdrop{background:#132b3ac9}.preview-dialog img{max-width:100%;max-height:72vh;object-fit:contain;display:block;margin:8px auto}.preview-dialog header{background:white;color:var(--ink);padding:0;display:flex;align-items:center}.preview-dialog header strong{font-size:16px;letter-spacing:0}.preview-dialog button{padding:7px 12px}.preview-actions label{display:flex;align-items:center;gap:8px}.preview-actions label input{margin:0;max-width:280px}
+[hidden]{display:none!important}</style>
+<meta name="referrer" content="no-referrer">
+</head>
+<body>
+<a class="skip" href="#inicio">Pular para o conteúdo</a>
+<header><div><strong>TRANSPOLO</strong><small>CENTRAL DE OPERAÇÕES</small></div><span>DEMONSTRAÇÃO</span></header>
+<div class="shell">
+<nav aria-label="Navegação principal"><a href="#inicio">Visão geral</a><a href="#consulta">Consulta tarifária</a><a href="#rascunhos">Rascunhos</a><a href="#acesso">Área interna</a><a href="#gestao">Inteligência gerencial</a><a href="#implantacao">Implantação</a></nav>
+<main id="inicio">
+<p class="eyebrow">Operações / ambiente de demonstração</p>
+<h1>Informação certa.<br>Operação mais simples.</h1>
+<p class="muted">Demonstração de consulta de deslocamentos. Documentos internos não estão disponíveis nesta página.</p>
+<div class="notice" role="note"><strong>Demonstração — dados fictícios.</strong> Os locais e preços abaixo são fictícios. Não usar para cobrança. Nenhum dado operacional é enviado ou salvo.</div>
+<div class="metrics"><div class="metric"><strong>Consulta</strong>Motor demonstrativo</div><div class="metric"><strong>Área interna</strong>Separada da demonstração</div><div class="metric"><strong>Homologação</strong>Excel pendente</div></div>
+<div class="layout"><section class="panel" id="consulta"><h2>Consulta tarifária</h2><p class="muted">Selecione o trajeto e o veículo. O preço de uma rota não é automaticamente válido para o sentido inverso.</p>
+<form id="form">
+<div class="fields">
+<label>Origem<select id="origem" required><option value="">Selecione</option><option>A — Base de teste</option><option>B — Terminal de teste</option><option>C — Hotel de teste</option></select></label>
+<label>Destino<select id="destino" required><option value="">Selecione</option><option>A — Base de teste</option><option>B — Terminal de teste</option><option>C — Hotel de teste</option></select></label>
+<label>Veículo<select id="veiculo" required><option value="">Selecione</option><option>CARRO</option><option>VAN</option></select></label>
+<label>Referência de teste<input id="referencia" maxlength="40" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,39}" placeholder="Ex.: DEMO-001"></label>
+</div><div class="actions"><button type="submit">Consultar</button><button type="button" id="registrar" class="secondary">Registrar rascunho</button><button type="reset" class="secondary">Limpar</button></div>
+</form><div id="resultado" class="result" role="status" aria-live="polite">Selecione os campos para consultar.</div></section>
+<section class="panel" id="acesso"><h2>Área interna</h2><p>O acervo institucional, os documentos e os dados comerciais são destinados exclusivamente à equipe autorizada. Esta demonstração não solicita credenciais e não acessa arquivos da empresa.</p><p class="muted">O ambiente interno será disponibilizado separadamente após homologação.</p></section></div>
+<section class="panel" id="rascunhos"><h2>Rascunhos da sessão</h2><p class="muted">Dados temporários em memória, descartados ao recarregar a página.</p><div class="table-wrap"><table><thead><tr><th>Referência</th><th>Origem</th><th>Destino</th><th>Veículo</th><th>Valor fictício</th></tr></thead><tbody id="linhas"><tr><td colspan="5">Nenhum rascunho registrado.</td></tr></tbody></table></div></section>
+
+<section class="panel" id="gestao"><h2>Inteligência gerencial</h2><p>Indicadores operacionais não são publicados neste site. O Excel e o OneDrive permanecem como fonte oficial.</p></section>
+<section class="panel" id="implantacao"><h2>Antes de entrar em operação</h2><p>Validar a base comercial, o modelo oficial de movimento e a integração no Excel. Este site é apenas uma demonstração e não está conectado aos arquivos da empresa.</p></section>
+
+<footer>TRANSPOLO · Demonstração pública · Nenhum dado comercial</footer>
+</main></div>
+<script>
+"use strict";
+const locais=["A — Base de teste","B — Terminal de teste","C — Hotel de teste"];
+const dados=[
+{origem:locais[0],destino:locais[1],veiculo:"CARRO",valor:100,aprovada:true},
+{origem:locais[0],destino:locais[1],veiculo:"VAN",valor:200,aprovada:true},
+{origem:locais[0],destino:locais[2],veiculo:"CARRO",valor:150,aprovada:false},
+{origem:locais[1],destino:locais[2],veiculo:"VAN",valor:230,aprovada:true},
+{origem:locais[1],destino:locais[2],veiculo:"VAN",valor:240,aprovada:false}
+];
+function consultar(origem,destino,veiculo){
+ if(!locais.includes(origem)||!locais.includes(destino)||!["CARRO","VAN"].includes(veiculo))return {erro:"Selecione origem, destino e veículo válidos."};
+ const encontrados=dados.filter(t=>t.origem===origem&&t.destino===destino&&t.veiculo===veiculo);
+ if(encontrados.length===0)return {erro:"Tarifa não cadastrada para este sentido e veículo."};
+ if(encontrados.length>1)return {erro:"Chave tarifária duplicada. Consulta bloqueada."};
+ if(!encontrados[0].aprovada)return {erro:"Tarifa de demonstração não aprovada."};
+ return {valor:encontrados[0].valor};
+}
+const money=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"});
+const el=id=>document.getElementById(id), form=el("form"), resultado=el("resultado"), rascunhos=[];
+function mensagem(texto,bloqueado=false){resultado.replaceChildren();resultado.classList.toggle("blocked",bloqueado);resultado.textContent=texto;}
+function executar(registrar){
+ const origem=el("origem").value,destino=el("destino").value,veiculo=el("veiculo").value,referencia=el("referencia").value.trim();
+ const r=consultar(origem,destino,veiculo);
+ if(r.erro){mensagem(r.erro,true);return;}
+ if(registrar){
+  if(!/^[A-Za-z0-9][A-Za-z0-9_-]{0,39}$/.test(referencia)){mensagem("Informe uma referência de teste válida.",true);return;}
+  if(rascunhos.some(x=>x.referencia.toUpperCase()===referencia.toUpperCase())){mensagem("Referência duplicada nesta sessão.",true);return;}
+  rascunhos.push({referencia,origem,destino,veiculo,valor:r.valor}); renderRascunhos();
+ }
+ mensagem((registrar?"Rascunho registrado na sessão. ":"Tarifa fictícia: ")+money.format(r.valor)+" — sem validade comercial.");
+}
+function renderRascunhos(){const tbody=el("linhas");tbody.replaceChildren();for(const r of rascunhos){const tr=document.createElement("tr");for(const v of [r.referencia,r.origem,r.destino,r.veiculo,money.format(r.valor)]){const td=document.createElement("td");td.textContent=v;tr.append(td);}tbody.append(tr);}}
+form.addEventListener("submit",e=>{e.preventDefault();executar(false);});
+form.addEventListener("input",()=>mensagem("Dados alterados. Consulte novamente."));
+form.addEventListener("reset",()=>mensagem("Selecione os campos para consultar."));
+el("registrar").addEventListener("click",()=>executar(true));
+
+
+</script>
+</body>
+</html>
